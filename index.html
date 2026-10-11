@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Сайт собирается</title>
+<meta name="description" content="">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Сайт собирается">
+<meta property="og:description" content="">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+<style>
+:root {
+  --шрифт-заголовков: Manrope, system-ui, sans-serif;  --шрифт-текста: Manrope, system-ui, sans-serif;
+  --цвет-фон: #F4F1EA;  --цвет-фон-2: #DDE2D7;  --цвет-фон-карточки: #F4F1EA;
+  --цвет-текст: #514B43;  --цвет-текст-мягкий: #596653;  --цвет-текст-тихий: #6A7061;
+  --цвет-акцент: #2F3E33;  --цвет-акцент-тёмный: #596653;  --цвет-акцент-яркий: #B86F45;  --цвет-на-акценте: #F4F1EA;
+  --цвет-акцент-глубже: #425041;  --цвет-акцент-маркер: #4C5A49;
+  --цвет-линия: #D8CBB8;
+  --цвет-тёмный-фон: #2F3E33;  --цвет-тёмный-фон-2: #514B43;  --цвет-тёмный-текст: #F4F1EA;
+  --цвет-тёмный-фон-3: #3D4339;  --цвет-тёмный-фон-4: #323F34;
+  --цвет-тёплый: #C5A568;  --цвет-тёплый-мягкий: #D8CBB8;
+  --цвет-стекло: color-mix(in srgb, #2F3E33 86%, transparent);
+  --тень: 0 12px 34px color-mix(in srgb, #2F3E33 6%, transparent);
+  --тень-чип: 0 10px 30px color-mix(in srgb, #2F3E33 12%, transparent);
+  --тень-глубокая: 0 24px 60px color-mix(in srgb, #2F3E33 35%, transparent);
+  --тень-спутник: 0 30px 60px color-mix(in srgb, #2F3E33 70%, transparent);
+  --тень-плиты: 0 40px 100px color-mix(in srgb, #2F3E33 70%, transparent);
+  --кегль-h1: 33px;  --кегль-h2: clamp(25px, 4vw, 38px);
+  --кегль-текст: clamp(16px, 1.3vw, 19px);  --кегль-лид: clamp(17px, 1.35vw, 20px);
+  --кегль-мелкий: 14px;  --кегль-кикер: clamp(14px, 1.1vw, 15px);  --кегль-цифра: 30px;  --разрядка-кикера: .03em;
+  --отступ-секции: clamp(44px, 6.5vw, 80px);  --отступ-блока: clamp(14px, 1.8vw, 24px);
+  --отступ-секции-тихо: clamp(34px, 5.1vw, 62px);  --отступ-секции-громко: clamp(51px, 7.5vw, 93px);
+  --ширина: 1120px;  --ширина-колонки: 560px;  --радиус: 14px;  --радиус-малый: 7px;
+  --радиус-карточки: 18px;  --радиус-плитки: 22px;  --радиус-телефон: 46px;  --кнопка-радиус: 12px;
+  --радиус-модуля: 16px;  --нить: 2px;
+  --плавность: cubic-bezier(.2, .7, .2, 1);  --длительность: .25s;
+}
+@media (min-width: 900px) {
+  :root { --кегль-h1: clamp(44px, 4vw, 58px); }
+}
+</style>
+<script>
+(function () {
+  var ЭТАЛОН = 0.535;                  // очко Open Sans — текстовой гарнитуры утверждённых макетов
+  var ПОТОЛОК = 1.2, МЁРТВАЯ = 0.02;   // выше потолка расползается раскладка; ближе к единице не трогаем вовсе
+  var КОМПЬЮТЕР = "(min-width: 900px)";
+  var ТОКЕНЫ = ["--кегль-текст", "--кегль-лид", "--кегль-мелкий", "--кегль-кикер"];
+  var корень = document.documentElement;
+  var холст = document.createElement("canvas").getContext("2d");
+  var ждём = 0;
+
+  function мера(буква) { var м = холст.measureText(буква); return (м && м.actualBoundingBoxAscent) || 0; }
+
+  function применить() {
+    ждём = 0;
+    if (!холст) { return; }
+
+    for (var i = 0; i < ТОКЕНЫ.length; i++) { корень.style.removeProperty(ТОКЕНЫ[i]); }
+    var стиль = getComputedStyle(корень), стек = стиль.getPropertyValue("--шрифт-текста").trim();
+    if (!стек) { return; }
+    холст.font = "400 100px " + стек;
+
+    var очко = Math.max(мера("х"), мера("x")) / 100;
+    if (!(очко > 0)) { return; }
+    var k = Math.round(Math.min(ПОТОЛОК, Math.max(1, ЭТАЛОН / очко)) * 1000) / 1000;
+    if (k - 1 < МЁРТВАЯ || !matchMedia(КОМПЬЮТЕР).matches) { k = 1; }
+    корень.setAttribute("data-очко", очко.toFixed(3));      // чтобы проверка могла сказать числа вслух
+    корень.setAttribute("data-поправка", k.toFixed(3));
+    if (k === 1) { return; }
+    for (i = 0; i < ТОКЕНЫ.length; i++) {
+      var было = стиль.getPropertyValue(ТОКЕНЫ[i]).trim();
+      if (было) { корень.style.setProperty(ТОКЕНЫ[i], "calc((" + было + ") * " + k + ")"); }
+    }
+  }
+
+  применить();
+
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(применить); }
+
+  addEventListener("resize", function () { ждём = ждём || requestAnimationFrame(применить); });
+})();
+</script>
+<style>
+.акулина-разделитель{display:block;width:clamp(118px,12vw,174px);height:auto;margin:0 0 18px;object-fit:contain}.акулина-хиты{margin:16px 0 0;color:var(--цвет-тёплый);font-size:var(--кегль-лид);font-weight:700}.акулина-цены{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 14px;margin:9px 0 0;padding:0;list-style:none;font-size:13px}.акулина-цены li{padding-left:14px;position:relative}.акулина-цены li:before{content:'•';position:absolute;left:0;color:var(--цвет-тёплый)}.акулина-мини{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:14px}.акулина-мини img{width:100%;height:70px;object-fit:cover;border:1px solid color-mix(in srgb,var(--цвет-тёплый) 55%,transparent);border-radius:9px}.акулина-под-фото{margin:8px 0 0;color:var(--цвет-тёмный-текст);font-size:13px;opacity:.82}.первый-экран--сцена .первый-экран__текст{max-width:560px}.липкая-кнопка{display:none!important}
+.первый-экран--сцена .кнопка--главная{background:var(--цвет-тёплый)!important;color:var(--цвет-тёмный-фон)!important;border-color:color-mix(in srgb,var(--цвет-тёплый) 82%,white)!important;box-shadow:0 12px 34px color-mix(in srgb,var(--цвет-тёплый) 34%,transparent)!important}
+.акулина-портрет-рамка{display:contents}
+@media(min-width:900px){.первый-экран--сцена .акулина-портрет-рамка{display:block;position:absolute;left:auto;right:0;top:0;width:48%;height:100%;overflow:hidden;mask-image:linear-gradient(to right,transparent 0,black 4%,black 100%),linear-gradient(to bottom,transparent 0,black 3%,black 97%,transparent 100%);mask-composite:intersect;-webkit-mask-image:linear-gradient(to right,transparent 0,black 4%,black 100%),linear-gradient(to bottom,transparent 0,black 3%,black 97%,transparent 100%);-webkit-mask-composite:source-in}.первый-экран--сцена .картинка--сцена .акулина-портрет-рамка img.акулина-портрет{position:absolute;left:-5%;right:auto;top:-2%;width:110%;height:110%;max-width:none;margin:0;object-fit:cover;object-position:50% 0!important;mask-image:none;-webkit-mask-image:none}.первый-экран--сцена .акулина-мини{max-width:560px}.первый-экран--сцена .акулина-мини img{height:64px}}
+@media(max-width:899px){.первый-экран--сцена{min-height:0!important;height:auto!important;padding-bottom:24px!important}.первый-экран--сцена .блок__внутри{min-height:0!important;height:auto!important;padding-top:360px!important}.первый-экран--сцена .первый-экран__картинка{height:430px!important;min-height:0!important}.первый-экран--сцена .первый-экран__картинка:after{background:linear-gradient(to bottom,transparent 50%,var(--цвет-тёмный-фон) 94%)!important}.первый-экран--сцена .акулина-портрет{width:100%!important;height:400px!important;max-width:none!important;margin:0!important;object-fit:cover!important;object-position:52% 0!important;mask-image:linear-gradient(to right,transparent 0,black 12%,black 88%,transparent 100%);-webkit-mask-image:linear-gradient(to right,transparent 0,black 12%,black 88%,transparent 100%)}.первый-экран--сцена .первый-экран__текст{padding-top:0!important;padding-bottom:0!important}.акулина-разделитель{width:132px;margin-bottom:16px}.акулина-цены{grid-template-columns:1fr;font-size:14px}.акулина-мини img{height:68px}.акулина-под-фото{font-size:14px;line-height:1.45}}
+</style>
+</head>
+<body class="с-липкой-кнопкой">
+<section class="блок блок--первый-экран первый-экран--сцена тёмный фон--зерно" id="экран-1" data-тип="первый-экран" data-схема="сцена" data-ключ-макета="тёмная" data-картинка="фото" style="--добор-затемнения: 0; --добор-высветления: 0">
+  <header class="шапка">
+    <a class="шапка__лого" href="#">АКУЛИНА</a>
+    <span class="шапка__лиц"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.2-7.5 9.5-4.3-1.3-7.5-4.9-7.5-9.5V6L12 3z"/>
+</svg><span><span class="полн">Доставка по России · самовывоз в Санкт-Петербурге</span><span class="кратко">Доставка по России</span></span></span>
+  </header>
+  <figure class="картинка картинка--сцена первый-экран__картинка"><span class="акулина-портрет-рамка"><img class="акулина-портрет" src="img/виктория.png" alt="Виктория, автор мастерской АКУЛИНА, среди трав" data-лицо="52,25" fetchpriority="high"></span></figure>
+  <div class="блок__внутри">
+    <div class="первый-экран__текст">
+      <img class="акулина-разделитель" src="img/разделитель-лист.png" alt="" aria-hidden="true">
+      <h1>Природа, огонь и то, что помнит кожа и дом</h1>
+      <p class="акулина-хиты">Осенние хиты</p>
+      <ul class="акулина-цены"><li>Хозяйственное кокосовое мыло — 200 ₽</li><li>Свечи-катанки, пара — 450 ₽</li><li>Шипучая соль для ванны, 300 г — 300 ₽</li><li>Пенка для умывания, 120 мл — 350 ₽</li><li>Противопростудный концентрат для ванны, 50 мл — 400 ₽</li></ul>
+      <div class="акулина-мини" aria-label="Пять товаров в наличии"><img src="img/01-мыло.png" alt="Хозяйственное кокосовое мыло"><img src="img/02-свечи.png" alt="Свечи-катанки"><img src="img/03-соль.jpg" alt="Шипучая соль для ванны"><img src="img/04-пенка.jpg" alt="Пенка для умывания"><img src="img/05-концентрат.png" alt="Противопростудный концентрат для ванны"></div>
+      <p class="акулина-под-фото">Другой аромат, объём или количество обсудим лично</p>
+      <div class="первый-экран__действие"><a class="кнопка кнопка--главная" href="https://vk.ru/akulina_lifestyle">Написать в сообщество</a></div>
+      <p class="мелкий первый-экран__доверие"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.2-7.5 9.5-4.3-1.3-7.5-4.9-7.5-9.5V6L12 3z"/>
+</svg> Изготовление на заказ — до 5 рабочих дней</p>
+    </div>
+  </div>
+</section>
+
+<div class="липкая-кнопка"><a class="кнопка кнопка--главная" href="https://vk.ru/akulina_lifestyle">Написать в сообщество</a></div>
+<script>
+(function () {
+  var СПИТ = "главная-на-виду";                       // класс на body; правило сна — в стилях
+  var кнопка = document.querySelector(".первый-экран__действие .кнопка--главная");
+  if (!кнопка || !window.IntersectionObserver) { return; }
+
+  function пометить(на_виду) { document.body.classList.toggle(СПИТ, !!на_виду); }
+
+  var б = кнопка.getBoundingClientRect();
+  пометить(б.bottom > 0 && б.top < (window.innerHeight || 0));
+
+  requestAnimationFrame(function () {
+    requestAnimationFrame(function () { document.body.classList.add("панель-с-переходом"); });
+  });
+
+  new IntersectionObserver(function (записи) {
+    пометить(записи[записи.length - 1].isIntersecting);
+  }, { threshold: 0 }).observe(кнопка);
+})();
+</script>
+</body>
+</html>
