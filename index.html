@@ -90,8 +90,9 @@
 .акулина-разделитель{display:block;width:clamp(118px,12vw,174px);height:auto;margin:0 0 18px;object-fit:contain}.акулина-хиты{display:inline-flex;align-items:center;margin:16px 0 0;padding:7px 13px;border:1px solid color-mix(in srgb,var(--цвет-тёплый) 68%,transparent);border-radius:999px;background:color-mix(in srgb,var(--цвет-тёплый) 15%,transparent);color:var(--цвет-тёплый);font-size:14px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;box-shadow:inset 0 0 18px color-mix(in srgb,var(--цвет-тёплый) 8%,transparent)}.акулина-хиты:before{content:'';width:7px;height:7px;border-radius:50%;background:currentColor;box-shadow:0 0 0 4px color-mix(in srgb,var(--цвет-тёплый) 14%,transparent);margin-right:9px}.акулина-цены{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 14px;margin:9px 0 0;padding:0;list-style:none;font-size:13px}.акулина-цены li{padding-left:14px;position:relative}.акулина-цены li:before{content:'•';position:absolute;left:0;color:var(--цвет-тёплый)}.акулина-мини{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:14px}.акулина-мини img{width:100%;height:70px;object-fit:cover;border:1px solid color-mix(in srgb,var(--цвет-тёплый) 55%,transparent);border-radius:9px}.акулина-под-фото{margin:8px 0 0;color:var(--цвет-тёмный-текст);font-size:13px;opacity:.82}.первый-экран--сцена .первый-экран__текст{max-width:560px}.липкая-кнопка{display:none!important}
 .первый-экран--сцена .кнопка--главная{background:var(--цвет-тёплый)!important;color:var(--цвет-тёмный-фон)!important;border-color:color-mix(in srgb,var(--цвет-тёплый) 82%,white)!important;box-shadow:0 12px 34px color-mix(in srgb,var(--цвет-тёплый) 34%,transparent)!important}
 .акулина-портрет-рамка{display:contents}
+.акулина-товар{display:block;min-width:0;padding:0;border:0;border-radius:9px;background:transparent;color:inherit;cursor:pointer;position:relative;transition:transform .2s ease,box-shadow .2s ease}.акулина-товар:after{content:'+';position:absolute;right:5px;bottom:5px;width:22px;height:22px;display:grid;place-items:center;border-radius:50%;background:color-mix(in srgb,var(--цвет-тёмный-фон) 84%,transparent);color:var(--цвет-тёплый);font-size:18px;line-height:1;box-shadow:0 3px 10px rgba(0,0,0,.28)}.акулина-товар:hover,.акулина-товар:focus-visible{transform:translateY(-3px);box-shadow:0 9px 24px rgba(0,0,0,.28);outline:2px solid var(--цвет-тёплый);outline-offset:2px}.акулина-подсказка{margin:8px 0 0;color:var(--цвет-тёплый-мягкий);font-size:12px;opacity:.78}.товар-окно[hidden]{display:none}.товар-окно{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;padding:20px;background:rgba(25,31,26,.78);backdrop-filter:blur(8px)}.товар-окно__карточка{position:relative;display:grid;grid-template-columns:minmax(240px,46%) minmax(280px,1fr);width:min(850px,100%);max-height:min(680px,92vh);overflow:auto;border:1px solid color-mix(in srgb,var(--цвет-тёплый) 45%,transparent);border-radius:22px;background:var(--цвет-фон);color:var(--цвет-текст);box-shadow:0 28px 90px rgba(0,0,0,.5)}.товар-окно__фото{width:100%;height:100%;min-height:430px;object-fit:cover;background:var(--цвет-фон-2)}.товар-окно__текст{display:flex;flex-direction:column;justify-content:center;padding:42px 38px}.товар-окно__метка{margin:0 0 10px;color:var(--цвет-акцент-яркий);font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}.товар-окно h2{margin:0;color:var(--цвет-акцент);font-size:clamp(25px,3vw,38px);line-height:1.08}.товар-окно__цена{margin:18px 0 0;color:var(--цвет-акцент-яркий);font-size:23px;font-weight:800}.товар-окно__описание{margin:14px 0 24px;line-height:1.55}.товар-окно__кнопка{align-self:flex-start;text-decoration:none}.товар-окно__закрыть{position:absolute;right:14px;top:14px;z-index:2;width:40px;height:40px;border:1px solid color-mix(in srgb,var(--цвет-тёмный-фон) 20%,transparent);border-radius:50%;background:color-mix(in srgb,var(--цвет-фон) 92%,transparent);color:var(--цвет-акцент);font-size:27px;line-height:1;cursor:pointer}.товар-окно__закрыть:hover,.товар-окно__закрыть:focus-visible{background:var(--цвет-тёплый);outline:2px solid var(--цвет-акцент);outline-offset:2px}
 @media(min-width:900px){.первый-экран--сцена .акулина-портрет-рамка{display:block;position:absolute;left:auto;right:0;top:0;width:48%;height:100%;overflow:hidden;mask-image:linear-gradient(to right,transparent 0,black 4%,black 100%),linear-gradient(to bottom,transparent 0,black 3%,black 97%,transparent 100%);mask-composite:intersect;-webkit-mask-image:linear-gradient(to right,transparent 0,black 4%,black 100%),linear-gradient(to bottom,transparent 0,black 3%,black 97%,transparent 100%);-webkit-mask-composite:source-in}.первый-экран--сцена .картинка--сцена .акулина-портрет-рамка img.акулина-портрет{position:absolute;left:-5%;right:auto;top:-2%;width:110%;height:110%;max-width:none;margin:0;object-fit:cover;object-position:50% 0!important;mask-image:none;-webkit-mask-image:none}.первый-экран--сцена .акулина-мини{max-width:560px}.первый-экран--сцена .акулина-мини img{height:64px}}
-@media(max-width:899px){.первый-экран--сцена{min-height:0!important;height:auto!important;padding-bottom:24px!important}.первый-экран--сцена .блок__внутри{min-height:0!important;height:auto!important;padding-top:360px!important}.первый-экран--сцена .первый-экран__картинка{height:430px!important;min-height:0!important}.первый-экран--сцена .первый-экран__картинка:after{background:linear-gradient(to bottom,transparent 50%,var(--цвет-тёмный-фон) 94%)!important}.первый-экран--сцена .акулина-портрет{width:100%!important;height:400px!important;max-width:none!important;margin:0!important;object-fit:cover!important;object-position:52% 0!important;mask-image:linear-gradient(to right,transparent 0,black 12%,black 88%,transparent 100%);-webkit-mask-image:linear-gradient(to right,transparent 0,black 12%,black 88%,transparent 100%)}.первый-экран--сцена .первый-экран__текст{padding-top:0!important;padding-bottom:0!important}.акулина-разделитель{width:132px;margin-bottom:16px}.акулина-цены{grid-template-columns:1fr;font-size:14px}.акулина-мини img{height:68px}.акулина-под-фото{font-size:14px;line-height:1.45}}
+@media(max-width:899px){.первый-экран--сцена{min-height:0!important;height:auto!important;padding-bottom:24px!important}.первый-экран--сцена .блок__внутри{min-height:0!important;height:auto!important;padding-top:360px!important}.первый-экран--сцена .первый-экран__картинка{height:430px!important;min-height:0!important}.первый-экран--сцена .первый-экран__картинка:after{background:linear-gradient(to bottom,transparent 50%,var(--цвет-тёмный-фон) 94%)!important}.первый-экран--сцена .акулина-портрет{width:100%!important;height:400px!important;max-width:none!important;margin:0!important;object-fit:cover!important;object-position:52% 0!important;mask-image:linear-gradient(to right,transparent 0,black 12%,black 88%,transparent 100%);-webkit-mask-image:linear-gradient(to right,transparent 0,black 12%,black 88%,transparent 100%)}.первый-экран--сцена .первый-экран__текст{padding-top:0!important;padding-bottom:0!important}.акулина-разделитель{width:132px;margin-bottom:16px}.акулина-цены{grid-template-columns:1fr;font-size:14px}.акулина-мини img{height:68px}.акулина-под-фото{font-size:14px;line-height:1.45}.товар-окно{padding:10px;align-items:end}.товар-окно__карточка{grid-template-columns:1fr;max-height:94vh;border-radius:20px 20px 8px 8px}.товар-окно__фото{height:40vh;min-height:230px}.товар-окно__текст{padding:25px 22px 28px}.товар-окно__закрыть{position:fixed;right:20px;top:20px;background:var(--цвет-фон)}}
 </style>
 </head>
 <body class="с-липкой-кнопкой">
@@ -109,7 +110,8 @@
       <h1>Природа, огонь и то, что помнит кожа и дом</h1>
       <p class="акулина-хиты">Осенние хиты</p>
       <ul class="акулина-цены"><li>Хозяйственное кокосовое мыло — 200 ₽</li><li>Свечи-катанки, пара — 450 ₽</li><li>Шипучая соль для ванны, 300 г — 300 ₽</li><li>Пенка для умывания, 120 мл — 350 ₽</li><li>Противопростудный концентрат для ванны, 50 мл — 400 ₽</li></ul>
-      <div class="акулина-мини" aria-label="Пять товаров в наличии"><img src="img/01-мыло.png" alt="Хозяйственное кокосовое мыло"><img src="img/02-свечи.png" alt="Свечи-катанки"><img src="img/03-соль.jpg" alt="Шипучая соль для ванны"><img src="img/04-пенка.jpg" alt="Пенка для умывания"><img src="img/05-концентрат.png" alt="Противопростудный концентрат для ванны"></div>
+      <div class="акулина-мини" aria-label="Пять сезонных товаров"><button class="акулина-товар" type="button" data-название="Хозяйственное кокосовое мыло" data-цена="200 ₽" data-описание="Для хозяйственных задач. Актуальное наличие и подробности обсудим лично." aria-label="Подробнее: хозяйственное кокосовое мыло"><img src="img/01-мыло.png" alt="Хозяйственное кокосовое мыло"></button><button class="акулина-товар" type="button" data-название="Свечи-катанки" data-цена="450 ₽ за пару" data-описание="Пара свечей-катанок. Актуальное наличие и подробности обсудим лично." aria-label="Подробнее: свечи-катанки"><img src="img/02-свечи.png" alt="Свечи-катанки"></button><button class="акулина-товар" type="button" data-название="Шипучая соль для ванны" data-цена="300 ₽" data-описание="Баночка 300 г. Аромат и актуальное наличие обсудим лично." aria-label="Подробнее: шипучая соль для ванны"><img src="img/03-соль.jpg" alt="Шипучая соль для ванны"></button><button class="акулина-товар" type="button" data-название="Пенка для умывания" data-цена="350 ₽" data-описание="Флакон 120 мл. Актуальное наличие и подробности обсудим лично." aria-label="Подробнее: пенка для умывания"><img src="img/04-пенка.jpg" alt="Пенка для умывания"></button><button class="акулина-товар" type="button" data-название="Противопростудный концентрат для ванны" data-цена="400 ₽" data-описание="Флакон 50 мл. Актуальное наличие и подробности обсудим лично." aria-label="Подробнее: противопростудный концентрат для ванны"><img src="img/05-концентрат.png" alt="Противопростудный концентрат для ванны"></button></div>
+      <p class="акулина-подсказка">Нажмите на фотографию, чтобы рассмотреть товар</p>
       <p class="акулина-под-фото">Другой аромат, объём или количество обсудим лично</p>
       <div class="первый-экран__действие"><a class="кнопка кнопка--главная" href="https://vk.ru/akulina_lifestyle">Написать в сообщество</a></div>
       <p class="мелкий первый-экран__доверие"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -119,7 +121,59 @@
   </div>
 </section>
 
+<div class="товар-окно" hidden role="dialog" aria-modal="true" aria-labelledby="товар-заголовок">
+  <article class="товар-окно__карточка">
+    <button class="товар-окно__закрыть" type="button" aria-label="Закрыть">×</button>
+    <img class="товар-окно__фото" src="" alt="">
+    <div class="товар-окно__текст">
+      <p class="товар-окно__метка">Осенний хит</p>
+      <h2 id="товар-заголовок"></h2>
+      <p class="товар-окно__цена"></p>
+      <p class="товар-окно__описание"></p>
+      <a class="кнопка кнопка--главная товар-окно__кнопка" href="https://vk.ru/akulina_lifestyle">Написать и заказать</a>
+    </div>
+  </article>
+</div>
+
 <div class="липкая-кнопка"><a class="кнопка кнопка--главная" href="https://vk.ru/akulina_lifestyle">Написать в сообщество</a></div>
+<script>
+(function () {
+  var окно = document.querySelector('.товар-окно');
+  if (!окно) return;
+  var фото = окно.querySelector('.товар-окно__фото');
+  var заголовок = окно.querySelector('h2');
+  var цена = окно.querySelector('.товар-окно__цена');
+  var описание = окно.querySelector('.товар-окно__описание');
+  var закрыть = окно.querySelector('.товар-окно__закрыть');
+  var возвратФокуса;
+
+  function открыть(кнопка) {
+    var картинка = кнопка.querySelector('img');
+    возвратФокуса = кнопка;
+    фото.src = картинка.src;
+    фото.alt = картинка.alt;
+    заголовок.textContent = кнопка.dataset.название;
+    цена.textContent = кнопка.dataset.цена;
+    описание.textContent = кнопка.dataset.описание;
+    окно.hidden = false;
+    document.body.style.overflow = 'hidden';
+    закрыть.focus();
+  }
+
+  function закрытьОкно() {
+    окно.hidden = true;
+    document.body.style.overflow = '';
+    if (возвратФокуса) возвратФокуса.focus();
+  }
+
+  document.querySelectorAll('.акулина-товар').forEach(function (кнопка) {
+    кнопка.addEventListener('click', function () { открыть(кнопка); });
+  });
+  закрыть.addEventListener('click', закрытьОкно);
+  окно.addEventListener('click', function (событие) { if (событие.target === окно) закрытьОкно(); });
+  document.addEventListener('keydown', function (событие) { if (событие.key === 'Escape' && !окно.hidden) закрытьОкно(); });
+})();
+</script>
 <script>
 (function () {
   var СПИТ = "главная-на-виду";                       // класс на body; правило сна — в стилях
