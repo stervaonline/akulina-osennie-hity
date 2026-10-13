@@ -121,6 +121,61 @@
   </div>
 </section>
 
+<section class="блок блок--о-себе блок--тихо ключ--наоборот фон--зерно светлый второй" id="экран-02" data-тип="о-себе" data-вёрстка="своя">
+<style>
+#экран-1{position:relative}
+#экран-1:after{content:'';position:absolute;z-index:4;left:0;right:0;bottom:0;height:72px;pointer-events:none;background:linear-gradient(to bottom,transparent,var(--цвет-тёмный-фон))}
+#экран-02{position:relative;overflow:hidden;background:linear-gradient(to bottom,var(--цвет-тёмный-фон) 0,color-mix(in srgb,var(--цвет-тёмный-фон) 66%,var(--цвет-фон-2)) 42px,var(--цвет-фон-2) 128px)}
+#экран-02:before{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,color-mix(in srgb,var(--цвет-акцент) 7%,transparent),transparent 38%),radial-gradient(circle at 82% 18%,color-mix(in srgb,var(--цвет-тёплый) 16%,transparent),transparent 27%)}
+#экран-02 .автор{position:relative;display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);gap:clamp(42px,7vw,92px);align-items:center}
+#экран-02 .автор__визуал{position:relative;padding:24px 0 36px}
+#экран-02 .автор__портрет{position:relative;margin:0;overflow:hidden;border-radius:var(--радиус-плитки);aspect-ratio:4/5;background:var(--цвет-фон-2);box-shadow:var(--тень-глубокая)}
+#экран-02 .автор__портрет img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 28%}
+#экран-02 .автор__имя{position:absolute;left:18px;bottom:18px;padding:10px 14px;border-radius:9em;background:var(--цвет-акцент);color:var(--цвет-на-акценте);font-size:var(--кегль-мелкий);font-weight:700;box-shadow:var(--тень-чип)}
+#экран-02 .автор__лента{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:10px}
+#экран-02 .автор__кадр{margin:0;overflow:hidden;border-radius:var(--радиус-карточки);aspect-ratio:1;background:var(--цвет-фон-2);box-shadow:var(--тень)}
+#экран-02 .автор__кадр img{display:block;width:100%;height:100%;object-fit:contain}
+#экран-02 .автор__текст{max-width:620px}
+#экран-02 .автор__заголовок{margin:14px 0 18px;font-size:var(--кегль-h2);line-height:1.05}
+#экран-02 .автор__лид{margin:0 0 18px;color:var(--цвет-акцент-яркий);font-size:var(--кегль-лид);font-weight:700}
+#экран-02 .автор__рассказ{margin:0;color:var(--цвет-текст-мягкий);font-size:var(--кегль-текст);line-height:1.65}
+#экран-02 .автор__цитата{margin:24px 0 0;padding:18px 20px;border-left:3px solid var(--цвет-акцент-яркий);background:color-mix(in srgb,var(--цвет-фон-карточки) 74%,transparent);border-radius:0 var(--радиус-карточки) var(--радиус-карточки) 0;color:var(--цвет-текст);font-size:var(--кегль-лид);line-height:1.45}
+#экран-02 .автор__опоры{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:26px;padding-top:22px;border-top:1px solid var(--цвет-линия)}
+#экран-02 .автор__опора{padding:0 14px;border-left:1px solid var(--цвет-линия)}
+#экран-02 .автор__опора:first-child{padding-left:0;border-left:0}
+#экран-02 .автор__опора b{display:block;margin-bottom:7px;color:var(--цвет-акцент);font-size:var(--кегль-кикер)}
+#экран-02 .автор__опора span{display:block;color:var(--цвет-текст-тихий);font-size:var(--кегль-мелкий);line-height:1.45}
+#экран-02 .автор__низ{display:flex;align-items:center;gap:14px;margin-top:26px;color:var(--цвет-текст-тихий);font-size:var(--кегль-мелкий)}
+#экран-02 .автор__низ strong{color:var(--цвет-акцент);font-size:var(--кегль-цифра)}
+@media(max-width:899px){#экран-02{padding-top:24px}#экран-02 .автор{grid-template-columns:1fr;gap:26px}#экран-02 .автор__текст{order:1;max-width:none}#экран-02 .автор__визуал{order:2;padding:0 0 24px}#экран-02 .автор__портрет{aspect-ratio:4/5}#экран-02 .автор__портрет img{object-fit:contain}#экран-02 .автор__имя{left:14px;bottom:14px}#экран-02 .автор__цитата{font-size:var(--кегль-текст)}#экран-02 .автор__опоры{grid-template-columns:1fr;gap:12px}#экран-02 .автор__опора,#экран-02 .автор__опора:first-child{padding:0 0 12px;border-left:0;border-bottom:1px solid var(--цвет-линия)}#экран-02 .автор__опора:last-child{border-bottom:0}#экран-02 .автор__низ{flex-direction:column;align-items:flex-start;gap:5px;margin-top:18px}#экран-02 .автор__низ strong{white-space:nowrap}}
+</style>
+  <div class="блок__внутри">
+    <div class="автор">
+      <div class="автор__визуал">
+        <figure class="автор__портрет"><img src="img/виктория-средства.jpg" alt="Виктория с мылом и кремом ручной работы"><figcaption class="автор__имя">Мастерская «АКУЛИНА»</figcaption></figure>
+        <div class="автор__лента" aria-label="Работа Виктории">
+          <figure class="автор__кадр"><img src="img/сбор-иван-чая.jpg" alt="Виктория собирает иван-чай"></figure>
+          <figure class="автор__кадр"><img src="img/подготовка-сырья.jpg" alt="Подготовка сырья"></figure>
+          <figure class="автор__кадр"><img src="img/мухоморы.jpg" alt="Необычное природное сырьё"></figure>
+        </div>
+      </div>
+      <div class="автор__текст">
+        <p class="кикер">Личная мастерская</p>
+        <h2 class="автор__заголовок">Природа в моих руках: от дикороса до готового средства</h2>
+        <p class="автор__лид">Собираю, придумываю и создаю сама</p>
+        <p class="автор__рассказ">Травы я знаю с детства: всему меня учила прабабушка Акулина, которая жила в деревне. В память о ней я назвала бренд. Сегодня сама собираю дикоросы, выбираю сырьё под каждый продукт и веду рецепт от идеи до готового средства.</p>
+        <blockquote class="автор__цитата">Это не просто бренд. Это состояние — когда ты перестаёшь спешить и возвращаешься к себе.</blockquote>
+        <div class="автор__опоры" aria-label="Как работает Виктория">
+          <div class="автор__опора"><b>Собираю</b><span>Травы, почки и цветы в сезон</span></div>
+          <div class="автор__опора"><b>Готовлю</b><span>Отвары, мацераты и сырьё для рецептов</span></div>
+          <div class="автор__опора"><b>Создаю</b><span>Уход для кожи, волос, тела и дома</span></div>
+        </div>
+        <p class="автор__низ"><strong>4 года</strong><span>в этом деле — от идеи до готового средства</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <div class="товар-окно" hidden role="dialog" aria-modal="true" aria-labelledby="товар-заголовок">
   <article class="товар-окно__карточка">
     <button class="товар-окно__закрыть" type="button" aria-label="Закрыть">×</button>
