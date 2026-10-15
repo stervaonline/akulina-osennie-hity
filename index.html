@@ -130,8 +130,10 @@
 #экран-02 .автор{position:relative;display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);gap:clamp(42px,7vw,92px);align-items:center}
 #экран-02 .автор__визуал{position:relative;padding:24px 0 36px}
 #экран-02 .автор__портрет{position:relative;margin:0;overflow:hidden;border-radius:var(--радиус-плитки);aspect-ratio:4/5;background:var(--цвет-фон-2);box-shadow:var(--тень-глубокая)}
-#экран-02 .автор__портрет img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 28%}
-#экран-02 .автор__имя{position:absolute;left:18px;bottom:18px;padding:10px 14px;border-radius:9em;background:var(--цвет-акцент);color:var(--цвет-на-акценте);font-size:var(--кегль-мелкий);font-weight:700;box-shadow:var(--тень-чип)}
+#экран-02 .автор__портрет:before{content:'';position:absolute;inset:-22px;background:url('img/виктория-средства.jpg') center/cover;filter:blur(20px);opacity:.44;transform:scale(1.08)}
+#экран-02 .автор__портрет:after{content:'';position:absolute;inset:0;background:color-mix(in srgb,var(--цвет-фон-2) 12%,transparent)}
+#экран-02 .автор__портрет img{position:relative;z-index:1;display:block;width:100%;height:100%;object-fit:contain}
+#экран-02 .автор__имя{position:absolute;z-index:2;left:18px;bottom:18px;padding:10px 14px;border-radius:9em;background:var(--цвет-акцент);color:var(--цвет-на-акценте);font-size:var(--кегль-мелкий);font-weight:700;box-shadow:var(--тень-чип)}
 #экран-02 .автор__лента{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:10px}
 #экран-02 .автор__кадр{margin:0;overflow:hidden;border-radius:var(--радиус-карточки);aspect-ratio:1;background:var(--цвет-фон-2);box-shadow:var(--тень)}
 #экран-02 .автор__кадр img{display:block;width:100%;height:100%;object-fit:contain}
@@ -172,6 +174,95 @@
         </div>
         <p class="автор__низ"><strong>4 года</strong><span>в этом деле — от идеи до готового средства</span></p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="блок светлый фон--зерно" id="экран-03" aria-labelledby="сырьё-заголовок">
+<style>
+#экран-03{position:relative;overflow:hidden;background:linear-gradient(to bottom,var(--цвет-фон-2) 0,#f3eadc 150px,#eee1cd 100%);padding-top:clamp(80px,8vw,132px)}
+#экран-03 .сырьё{position:relative}
+#экран-03 .сырьё__шапка{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);gap:clamp(32px,7vw,94px);align-items:end;margin-bottom:clamp(34px,5vw,64px)}
+#экран-03 .сырьё__заголовок{max-width:820px;margin:14px 0 0;font-size:var(--кегль-h2);line-height:1.03}
+#экран-03 .сырьё__лид{margin:0 0 3px;color:var(--цвет-текст-мягкий);font-size:var(--кегль-текст);line-height:1.65}
+#экран-03 .сырьё__лента{display:grid;grid-template-columns:1.12fr .9fr .9fr 1.05fr;gap:3px;overflow:hidden;border-radius:var(--радиус-плитки);background:var(--цвет-акцент);box-shadow:var(--тень-глубокая)}
+#экран-03 .кадр-пути{position:relative;min-width:0;background:#4b4b3e;color:#fff}
+#экран-03 .кадр-пути__фото{position:relative;height:clamp(290px,30vw,450px);overflow:hidden;background:#39463d}
+#экран-03 .кадр-пути__фото:before{content:'';position:absolute;inset:-18px;background:var(--фон-фото) center/cover;filter:blur(18px);opacity:.34;transform:scale(1.08)}
+#экран-03 .кадр-пути__фото:after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 58%,rgba(22,31,25,.4))}
+#экран-03 .кадр-пути__фото img{position:relative;z-index:1;display:block;width:100%;height:100%;object-fit:contain}
+#экран-03 .кадр-пути__номер{position:absolute;z-index:2;left:16px;top:15px;color:#fff;font-size:var(--кегль-кикер);font-weight:800;letter-spacing:.08em;text-shadow:0 1px 7px rgba(0,0,0,.55)}
+#экран-03 .кадр-пути__текст{min-height:150px;padding:20px 18px 24px;background:linear-gradient(145deg,#435247,#313d35)}
+#экран-03 .кадр-пути__текст h3{margin:0 0 9px;color:#fff;font-size:var(--кегль-h3)}
+#экран-03 .кадр-пути__текст p{margin:0;color:rgba(255,255,255,.7);font-size:var(--кегль-мелкий);line-height:1.5}
+#экран-03 .сырьё__формула{display:flex;justify-content:center;align-items:center;gap:clamp(12px,2.5vw,34px);margin:clamp(32px,5vw,58px) 0 0;color:var(--цвет-акцент);font-size:var(--кегль-лид);font-weight:800;text-align:center}
+#экран-03 .сырьё__формула span{display:flex;align-items:center;gap:clamp(12px,2.5vw,34px)}
+#экран-03 .сырьё__формула span:not(:last-child):after{content:'→';color:var(--цвет-акцент-яркий)}
+@media(max-width:899px){#экран-03{padding-top:76px}#экран-03 .сырьё__шапка{grid-template-columns:1fr;gap:18px;margin-bottom:28px}#экран-03 .сырьё__лента{grid-template-columns:1fr;gap:2px}#экран-03 .кадр-пути{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr)}#экран-03 .кадр-пути:nth-child(even){grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr)}#экран-03 .кадр-пути:nth-child(even) .кадр-пути__фото{order:2}#экран-03 .кадр-пути__фото{height:auto;min-height:210px}#экран-03 .кадр-пути__текст{display:flex;min-height:210px;flex-direction:column;justify-content:center;padding:18px}#экран-03 .сырьё__формула{flex-wrap:wrap;gap:8px 14px;font-size:var(--кегль-текст)}#экран-03 .сырьё__формула span{gap:14px}}
+</style>
+  <div class="блок__внутри">
+    <div class="сырьё">
+      <div class="сырьё__шапка">
+        <div><p class="кикер">Сырьё выбирает задача</p><h2 class="сырьё__заголовок" id="сырьё-заголовок">Не одна трава для всего.<br>Каждому средству — своё</h2></div>
+        <p class="сырьё__лид">Я работаю не с «модным ингредиентом», а с тем, что нужно конкретному продукту. Поэтому путь начинается не с банки — а с сезона, растения и цели.</p>
+      </div>
+      <div class="сырьё__лента" aria-label="Путь от растения до готового средства">
+        <article class="кадр-пути"><div class="кадр-пути__фото" style="--фон-фото:url('img/сбор-лепестков-роз.jpg')"><span class="кадр-пути__номер">01</span><img src="img/сбор-лепестков-роз.jpg" alt="Сбор лепестков роз в сезон"></div><div class="кадр-пути__текст"><h3>Время сбора</h3><p>Беру растение тогда, когда приходит его сезон.</p></div></article>
+        <article class="кадр-пути"><div class="кадр-пути__фото" style="--фон-фото:url('img/листья-для-сырья.jpg')"><span class="кадр-пути__номер">02</span><img src="img/листья-для-сырья.jpg" alt="Свежие листья для подготовки сырья"></div><div class="кадр-пути__текст"><h3>Выбор растения</h3><p>Травы, почки, листья и цветы — под задачу будущего продукта.</p></div></article>
+        <article class="кадр-пути"><div class="кадр-пути__фото" style="--фон-фото:url('img/состав-рецепта.jpg')"><span class="кадр-пути__номер">03</span><img src="img/состав-рецепта.jpg" alt="Подготовленные компоненты будущего рецепта"></div><div class="кадр-пути__текст"><h3>Работа с рецептом</h3><p>Подготавливаю сырьё и соединяю компоненты шаг за шагом.</p></div></article>
+        <article class="кадр-пути"><div class="кадр-пути__фото" style="--фон-фото:url('img/проверка-пенки.jpg')"><span class="кадр-пути__номер">04</span><img src="img/проверка-пенки.jpg" alt="Проверка готовой пенки в использовании"></div><div class="кадр-пути__текст"><h3>Готовое средство</h3><p>Проверяю текстуру, аромат и удобство использования.</p></div></article>
+      </div>
+      <p class="сырьё__формула"><span>Сезон</span><span>Растение</span><span>Рецепт</span><span>Средство</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="блок тёмный фон--зерно" id="экран-04" aria-labelledby="ассортимент-заголовок">
+<style>
+#экран-04{position:relative;overflow:hidden;background:linear-gradient(to bottom,#eee1cd 0,color-mix(in srgb,#eee1cd 52%,var(--цвет-тёмный-фон)) 76px,var(--цвет-тёмный-фон) 178px);padding-top:clamp(104px,11vw,176px)}
+#экран-04:before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 88% 24%,color-mix(in srgb,var(--цвет-акцент-яркий) 12%,transparent),transparent 26%),radial-gradient(circle at 10% 82%,color-mix(in srgb,var(--цвет-тёплый) 10%,transparent),transparent 24%)}
+#экран-04 .ассортимент{position:relative}
+#экран-04 .ассортимент__шапка{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(300px,.8fr);gap:clamp(34px,7vw,96px);align-items:end;margin-bottom:clamp(34px,5vw,62px)}
+#экран-04 .ассортимент__заголовок{max-width:760px;margin:14px 0 0;font-size:var(--кегль-h2);line-height:1.04}
+#экран-04 .ассортимент__вводная{margin:0;color:color-mix(in srgb,var(--цвет-тёмный-текст) 72%,transparent);font-size:var(--кегль-текст);line-height:1.6}
+#экран-04 .ассортимент__сетка{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+#экран-04 .направление{position:relative;min-height:210px;overflow:hidden;padding:26px;border:1px solid color-mix(in srgb,var(--цвет-тёмный-текст) 14%,transparent);border-radius:var(--радиус-плитки);background:linear-gradient(145deg,color-mix(in srgb,var(--цвет-тёмный-фон-2) 88%,transparent),color-mix(in srgb,var(--цвет-тёмный-фон) 92%,black));box-shadow:var(--тень);isolation:isolate}
+#экран-04 .направление:before{content:'';position:absolute;right:-40px;bottom:-54px;width:170px;height:170px;border:1px solid color-mix(in srgb,var(--цвет-акцент) 28%,transparent);border-radius:50%;box-shadow:0 0 0 24px color-mix(in srgb,var(--цвет-акцент) 5%,transparent),0 0 0 52px color-mix(in srgb,var(--цвет-акцент) 4%,transparent)}
+#экран-04 .направление:after{content:attr(data-номер);position:absolute;right:18px;top:12px;color:color-mix(in srgb,var(--цвет-тёмный-текст) 10%,transparent);font-size:clamp(54px,7vw,96px);font-weight:900;line-height:1}
+#экран-04 .направление--широкое{grid-column:span 2}
+#экран-04 .направление--мыло{min-height:260px}
+#экран-04 .направление--мыло .направление__внутри{padding-top:116px}
+#экран-04 .направление--нижнее{min-height:275px}
+#экран-04 .направление--нижнее .направление__внутри{padding-top:108px}
+#экран-04 .направление--ароматы{grid-column:1/-1;min-height:165px}
+#экран-04 .направление__внутри{position:relative;z-index:1;display:flex;height:100%;flex-direction:column;justify-content:flex-end}
+#экран-04 .направление__иконка{position:absolute;z-index:1;left:18px;top:14px;width:clamp(88px,10vw,132px);height:auto;opacity:.9;filter:drop-shadow(0 8px 18px rgba(0,0,0,.16))}
+#экран-04 .направление--широкое .направление__иконка{width:clamp(102px,12vw,150px)}
+#экран-04 .направление--ароматы .направление__иконка{left:auto;right:84px;top:18px;width:150px}
+#экран-04 .направление h3{max-width:85%;margin:0 0 10px;color:var(--цвет-тёмный-текст);font-size:var(--кегль-h3);line-height:1.12}
+#экран-04 .направление p{max-width:620px;margin:0;color:color-mix(in srgb,var(--цвет-тёмный-текст) 64%,transparent);font-size:var(--кегль-мелкий);line-height:1.5}
+#экран-04 .направление__подвиды{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;padding:0;list-style:none}
+#экран-04 .направление__подвиды li{padding:7px 11px;border:1px solid color-mix(in srgb,var(--цвет-акцент-яркий) 38%,transparent);border-radius:9em;color:var(--цвет-акцент-яркий);font-size:var(--кегль-мелкий);font-weight:700}
+#экран-04 .ассортимент__примечание{margin:24px 0 0;color:color-mix(in srgb,var(--цвет-тёмный-текст) 48%,transparent);font-size:var(--кегль-мелкий);text-align:center}
+@media(max-width:899px){#экран-04{padding-top:94px}#экран-04 .ассортимент__шапка{grid-template-columns:1fr;gap:18px;margin-bottom:28px}#экран-04 .ассортимент__сетка{grid-template-columns:1fr;gap:12px}#экран-04 .направление,#экран-04 .направление--широкое,#экран-04 .направление--ароматы{grid-column:auto;min-height:220px;padding:22px}#экран-04 .направление--мыло{min-height:270px}#экран-04 .направление--мыло .направление__внутри{padding-top:102px}#экран-04 .направление--нижнее{min-height:270px}#экран-04 .направление--нижнее .направление__внутри{padding-top:100px}#экран-04 .направление--ароматы{min-height:250px}#экран-04 .направление:after{font-size:70px}#экран-04 .направление__иконка,#экран-04 .направление--широкое .направление__иконка{width:112px}#экран-04 .направление--ароматы .направление__иконка{left:18px;right:auto;top:12px;width:126px}#экран-04 .направление__подвиды{gap:7px}#экран-04 .направление__подвиды li{padding:6px 10px}}
+</style>
+  <div class="блок__внутри">
+    <div class="ассортимент">
+      <div class="ассортимент__шапка">
+        <div><p class="кикер">Направления мастерской</p><h2 class="ассортимент__заголовок" id="ассортимент-заголовок">Что я создаю</h2></div>
+        <p class="ассортимент__вводная">Не один тип продукта, а уход и атмосфера для разных задач — от ежедневных средств до домашних ароматов.</p>
+      </div>
+      <div class="ассортимент__сетка" aria-label="Направления ассортимента">
+        <article class="направление направление--широкое направление--мыло" data-номер="01"><img class="направление__иконка" src="img/линия-мыло.svg" alt=""><div class="направление__внутри"><h3>Мыло</h3><p>Разные способы создания — под идею, состав и характер продукта.</p><ul class="направление__подвиды"><li>С нуля</li><li>Из основы</li></ul></div></article>
+        <article class="направление направление--широкое" data-номер="02"><img class="направление__иконка" src="img/линия-волосы.svg" alt=""><div class="направление__внутри"><h3>Шампуни и уход за волосами</h3><p>Средства для очищения и ухода за волосами.</p></div></article>
+        <article class="направление" data-номер="03"><img class="направление__иконка" src="img/линия-лицо.svg" alt=""><div class="направление__внутри"><h3>Для лица</h3><p>Очищение и уход за кожей лица.</p></div></article>
+        <article class="направление" data-номер="04"><img class="направление__иконка" src="img/линия-тело.svg" alt=""><div class="направление__внутри"><h3>Для тела</h3><p>Повседневный уход за кожей тела.</p></div></article>
+        <article class="направление" data-номер="05"><img class="направление__иконка" src="img/линия-спа.svg" alt=""><div class="направление__внутри"><h3>SPA-косметика</h3><p>Средства для ванны и домашних ритуалов.</p></div></article>
+        <article class="направление" data-номер="06"><img class="направление__иконка" src="img/линия-свечи.svg" alt=""><div class="направление__внутри"><h3>Свечи</h3><p>Тёплый свет и атмосфера для дома.</p></div></article>
+        <article class="направление направление--широкое направление--нижнее" data-номер="07"><img class="направление__иконка" src="img/линия-ароматы.svg" alt=""><div class="направление__внутри"><h3>Ароматы для дома</h3><p>Разные форматы, чтобы наполнить пространство выбранным ароматом.</p><ul class="направление__подвиды"><li>Аромасаше</li><li>Аромадиффузоры</li><li>Мелтсы</li></ul></div></article>
+        <article class="направление направление--широкое направление--нижнее" data-номер="08"><img class="направление__иконка" src="img/линия-бытовая-химия.svg" alt=""><div class="направление__внутри"><h3>Бытовая НЕ химия</h3><p>Натуральные средства для чистоты дома — с понятным составом и без лишнего.</p></div></article>
+      </div>
+      <p class="ассортимент__примечание">Сейчас это обзор направлений. Каталог появится позже.</p>
     </div>
   </div>
 </section>
