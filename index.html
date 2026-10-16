@@ -225,26 +225,40 @@
 #экран-04 .ассортимент__шапка{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(300px,.8fr);gap:clamp(34px,7vw,96px);align-items:end;margin-bottom:clamp(34px,5vw,62px)}
 #экран-04 .ассортимент__заголовок{max-width:760px;margin:14px 0 0;font-size:var(--кегль-h2);line-height:1.04}
 #экран-04 .ассортимент__вводная{margin:0;color:color-mix(in srgb,var(--цвет-тёмный-текст) 72%,transparent);font-size:var(--кегль-текст);line-height:1.6}
-#экран-04 .ассортимент__сетка{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-#экран-04 .направление{position:relative;min-height:210px;overflow:hidden;padding:26px;border:1px solid color-mix(in srgb,var(--цвет-тёмный-текст) 14%,transparent);border-radius:var(--радиус-плитки);background:linear-gradient(145deg,color-mix(in srgb,var(--цвет-тёмный-фон-2) 88%,transparent),color-mix(in srgb,var(--цвет-тёмный-фон) 92%,black));box-shadow:var(--тень);isolation:isolate}
+#экран-04 .ассортимент__сетка{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px}
+#экран-04 .направление{position:relative;grid-column:span 3;min-height:232px;overflow:hidden;padding:26px;border:1px solid color-mix(in srgb,var(--цвет-тёмный-текст) 14%,transparent);border-radius:var(--радиус-плитки);background:#2F3E33;box-shadow:var(--тень);isolation:isolate}
 #экран-04 .направление:before{content:'';position:absolute;right:-40px;bottom:-54px;width:170px;height:170px;border:1px solid color-mix(in srgb,var(--цвет-акцент) 28%,transparent);border-radius:50%;box-shadow:0 0 0 24px color-mix(in srgb,var(--цвет-акцент) 5%,transparent),0 0 0 52px color-mix(in srgb,var(--цвет-акцент) 4%,transparent)}
-#экран-04 .направление:after{content:attr(data-номер);position:absolute;right:18px;top:12px;color:color-mix(in srgb,var(--цвет-тёмный-текст) 10%,transparent);font-size:clamp(54px,7vw,96px);font-weight:900;line-height:1}
-#экран-04 .направление--широкое{grid-column:span 2}
+#экран-04 .направление:after{display:none}
+#экран-04 .направление--широкое{grid-column:auto}
+#экран-04 .направление--с-фото{padding:0;background:#2F3E33}
+#экран-04 .направление--с-фото:before{display:none}
+#экран-04 .направление--с-фото>img{display:block;width:100%;height:100%;object-fit:contain;object-position:center top}
+#экран-04 .направление--вырезка>img{object-fit:contain;object-position:center top;padding:8px 10px 48px}
+#экран-04 .направление--с-фото .направление__внутри{position:absolute;z-index:2;inset:auto 0 0;height:auto;padding:76px 28px 25px;background:linear-gradient(to bottom,transparent,#2F3E33 62%)}
+#экран-04 .направление--с-фото h3{max-width:none}
+#экран-04 .направление--с-фото p{color:rgba(255,255,255,.72)}
 #экран-04 .направление--мыло{min-height:260px}
 #экран-04 .направление--мыло .направление__внутри{padding-top:116px}
 #экран-04 .направление--нижнее{min-height:275px}
 #экран-04 .направление--нижнее .направление__внутри{padding-top:108px}
+#экран-04 .направление--товарная-широкая{min-height:290px;height:290px}
+#экран-04 .направление--товарная-широкая>img{object-position:center 38%}
+#экран-04 .ассортимент__сетка .направление:nth-child(1){grid-column:span 7;min-height:320px;height:320px}
+#экран-04 .ассортимент__сетка .направление:nth-child(2){grid-column:span 5;min-height:320px;height:320px}
+#экран-04 .ассортимент__сетка .направление:nth-child(7){grid-column:span 5}
+#экран-04 .ассортимент__сетка .направление:nth-child(8){grid-column:span 7}
 #экран-04 .направление--ароматы{grid-column:1/-1;min-height:165px}
 #экран-04 .направление__внутри{position:relative;z-index:1;display:flex;height:100%;flex-direction:column;justify-content:flex-end}
-#экран-04 .направление__иконка{position:absolute;z-index:1;left:18px;top:14px;width:clamp(88px,10vw,132px);height:auto;opacity:.9;filter:drop-shadow(0 8px 18px rgba(0,0,0,.16))}
-#экран-04 .направление--широкое .направление__иконка{width:clamp(102px,12vw,150px)}
+#экран-04 .направление__иконка{position:absolute;z-index:1;left:20px;top:16px;width:clamp(78px,9vw,116px);height:auto;opacity:.82}
+#экран-04 .направление--широкое .направление__иконка{width:clamp(88px,10vw,128px)}
 #экран-04 .направление--ароматы .направление__иконка{left:auto;right:84px;top:18px;width:150px}
 #экран-04 .направление h3{max-width:85%;margin:0 0 10px;color:var(--цвет-тёмный-текст);font-size:var(--кегль-h3);line-height:1.12}
 #экран-04 .направление p{max-width:620px;margin:0;color:color-mix(in srgb,var(--цвет-тёмный-текст) 64%,transparent);font-size:var(--кегль-мелкий);line-height:1.5}
 #экран-04 .направление__подвиды{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;padding:0;list-style:none}
 #экран-04 .направление__подвиды li{padding:7px 11px;border:1px solid color-mix(in srgb,var(--цвет-акцент-яркий) 38%,transparent);border-radius:9em;color:var(--цвет-акцент-яркий);font-size:var(--кегль-мелкий);font-weight:700}
 #экран-04 .ассортимент__примечание{margin:24px 0 0;color:color-mix(in srgb,var(--цвет-тёмный-текст) 48%,transparent);font-size:var(--кегль-мелкий);text-align:center}
-@media(max-width:899px){#экран-04{padding-top:94px}#экран-04 .ассортимент__шапка{grid-template-columns:1fr;gap:18px;margin-bottom:28px}#экран-04 .ассортимент__сетка{grid-template-columns:1fr;gap:12px}#экран-04 .направление,#экран-04 .направление--широкое,#экран-04 .направление--ароматы{grid-column:auto;min-height:220px;padding:22px}#экран-04 .направление--мыло{min-height:270px}#экран-04 .направление--мыло .направление__внутри{padding-top:102px}#экран-04 .направление--нижнее{min-height:270px}#экран-04 .направление--нижнее .направление__внутри{padding-top:100px}#экран-04 .направление--ароматы{min-height:250px}#экран-04 .направление:after{font-size:70px}#экран-04 .направление__иконка,#экран-04 .направление--широкое .направление__иконка{width:112px}#экран-04 .направление--ароматы .направление__иконка{left:18px;right:auto;top:12px;width:126px}#экран-04 .направление__подвиды{gap:7px}#экран-04 .направление__подвиды li{padding:6px 10px}}
+@media(max-width:899px){#экран-04{padding-top:94px}#экран-04 .ассортимент__шапка{grid-template-columns:1fr;gap:18px;margin-bottom:28px}#экран-04 .ассортимент__сетка{grid-template-columns:1fr;gap:12px}#экран-04 .направление,#экран-04 .направление--широкое,#экран-04 .направление--ароматы,#экран-04 .ассортимент__сетка .направление:nth-child(n){grid-column:auto;min-height:220px;height:auto;padding:22px}#экран-04 .направление--мыло{min-height:270px}#экран-04 .направление--мыло .направление__внутри{padding-top:102px}#экран-04 .направление--нижнее{min-height:270px}#экран-04 .направление--нижнее .направление__внутри{padding-top:100px}#экран-04 .направление--ароматы{min-height:250px}#экран-04 .направление:after{font-size:70px}#экран-04 .направление__иконка,#экран-04 .направление--широкое .направление__иконка{width:96px}#экран-04 .направление--ароматы .направление__иконка{left:18px;right:auto;top:12px;width:108px}#экран-04 .направление__подвиды{gap:7px}#экран-04 .направление__подвиды li{padding:6px 10px}}
+@media(max-width:899px){#экран-04 .направление--с-фото,#экран-04 .направление--товарная-широкая{display:flex;min-height:0!important;height:auto!important;padding:0!important;flex-direction:column}#экран-04 .направление--с-фото>img,#экран-04 .направление--вырезка>img{width:100%;height:auto;aspect-ratio:3/2;object-fit:contain;object-position:center;padding:0;flex:none;filter:none}#экран-04 .направление--с-фото .направление__внутри,#экран-04 .направление--товарная-широкая .направление__внутри{position:relative;inset:auto;padding:15px 22px 22px;background:#2F3E33}#экран-04 .направление__подвиды{margin-top:12px}}
 </style>
   <div class="блок__внутри">
     <div class="ассортимент">
@@ -253,14 +267,14 @@
         <p class="ассортимент__вводная">Не один тип продукта, а уход и атмосфера для разных задач — от ежедневных средств до домашних ароматов.</p>
       </div>
       <div class="ассортимент__сетка" aria-label="Направления ассортимента">
-        <article class="направление направление--широкое направление--мыло" data-номер="01"><img class="направление__иконка" src="img/линия-мыло.svg" alt=""><div class="направление__внутри"><h3>Мыло</h3><p>Разные способы создания — под идею, состав и характер продукта.</p><ul class="направление__подвиды"><li>С нуля</li><li>Из основы</li></ul></div></article>
-        <article class="направление направление--широкое" data-номер="02"><img class="направление__иконка" src="img/линия-волосы.svg" alt=""><div class="направление__внутри"><h3>Шампуни и уход за волосами</h3><p>Средства для очищения и ухода за волосами.</p></div></article>
-        <article class="направление" data-номер="03"><img class="направление__иконка" src="img/линия-лицо.svg" alt=""><div class="направление__внутри"><h3>Для лица</h3><p>Очищение и уход за кожей лица.</p></div></article>
-        <article class="направление" data-номер="04"><img class="направление__иконка" src="img/линия-тело.svg" alt=""><div class="направление__внутри"><h3>Для тела</h3><p>Повседневный уход за кожей тела.</p></div></article>
-        <article class="направление" data-номер="05"><img class="направление__иконка" src="img/линия-спа.svg" alt=""><div class="направление__внутри"><h3>SPA-косметика</h3><p>Средства для ванны и домашних ритуалов.</p></div></article>
-        <article class="направление" data-номер="06"><img class="направление__иконка" src="img/линия-свечи.svg" alt=""><div class="направление__внутри"><h3>Свечи</h3><p>Тёплый свет и атмосфера для дома.</p></div></article>
-        <article class="направление направление--широкое направление--нижнее" data-номер="07"><img class="направление__иконка" src="img/линия-ароматы.svg" alt=""><div class="направление__внутри"><h3>Ароматы для дома</h3><p>Разные форматы, чтобы наполнить пространство выбранным ароматом.</p><ul class="направление__подвиды"><li>Аромасаше</li><li>Аромадиффузоры</li><li>Мелтсы</li></ul></div></article>
-        <article class="направление направление--широкое направление--нижнее" data-номер="08"><img class="направление__иконка" src="img/линия-бытовая-химия.svg" alt=""><div class="направление__внутри"><h3>Бытовая НЕ химия</h3><p>Натуральные средства для чистоты дома — с понятным составом и без лишнего.</p></div></article>
+        <article class="направление направление--широкое направление--с-фото направление--товарная-широкая" data-номер="01"><img src="img/категория-мыло-v2-финал.png" alt="Натуральное мыло ручной работы"><div class="направление__внутри"><h3>Мыло</h3><p>Разные способы создания — под идею, состав и характер продукта.</p><ul class="направление__подвиды"><li>С нуля</li><li>Из основы</li></ul></div></article>
+        <article class="направление направление--широкое направление--с-фото направление--товарная-широкая" data-номер="02"><img src="img/категория-волосы-v4-финал.png" alt="Шампуни и уход за волосами"><div class="направление__внутри"><h3>Шампуни и уход за волосами</h3><p>Средства для очищения и ухода за волосами.</p></div></article>
+        <article class="направление направление--с-фото направление--вырезка" data-номер="03"><img src="img/категория-лицо-v5-финал.png" alt="Натуральный уход за кожей лица"><div class="направление__внутри"><h3>Для лица</h3><p>Очищение и уход за кожей лица.</p></div></article>
+        <article class="направление направление--с-фото направление--вырезка" data-номер="04"><img src="img/категория-тело-v4-с-логотипом.png" alt="Натуральный уход за кожей тела"><div class="направление__внутри"><h3>Для тела</h3><p>Повседневный уход за кожей тела.</p></div></article>
+        <article class="направление направление--с-фото" data-номер="05"><img src="img/категория-спа-v2-без-бомбочек.png" alt="SPA-косметика"><div class="направление__внутри"><h3>SPA-косметика</h3><p>Средства для ванны и домашних ритуалов.</p></div></article>
+        <article class="направление направление--с-фото" data-номер="06"><img src="img/категория-свечи-v1-финал.png" alt="Натуральные свечи"><div class="направление__внутри"><h3>Свечи</h3><p>Тёплый свет и атмосфера для дома.</p></div></article>
+        <article class="направление направление--широкое направление--с-фото направление--товарная-широкая" data-номер="07"><img src="img/категория-ароматы-v1-финал.png" alt="Ароматы для дома"><div class="направление__внутри"><h3>Ароматы для дома</h3><p>Разные форматы, чтобы наполнить пространство выбранным ароматом.</p><ul class="направление__подвиды"><li>Аромасаше</li><li>Аромадиффузоры</li><li>Мелтсы</li></ul></div></article>
+        <article class="направление направление--широкое направление--с-фото направление--товарная-широкая" data-номер="08"><img src="img/категория-бытовая-v1-финал.png" alt="Бытовая НЕ химия"><div class="направление__внутри"><h3>Бытовая НЕ химия</h3><p>Натуральные средства для чистоты дома — с понятным составом и без лишнего.</p></div></article>
       </div>
       <p class="ассортимент__примечание">Сейчас это обзор направлений. Каталог появится позже.</p>
     </div>
