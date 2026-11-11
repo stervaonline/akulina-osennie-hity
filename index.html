@@ -45,6 +45,7 @@
   :root { --кегль-h1: clamp(44px, 4vw, 58px); }
 }
 </style>
+<script>
 document.addEventListener('DOMContentLoaded', function () {
   var кнопкаВверх = document.createElement('button');
   кнопкаВверх.className = 'кнопка-вверх';
@@ -322,7 +323,7 @@ document.addEventListener('DOMContentLoaded', function () {
 #экран-05.светлый .заказ__шаг p{color:var(--цвет-текст-мягкий)}
 #экран-05.тёмный .заказ__шаг p{color:color-mix(in srgb,var(--цвет-тёмный-текст) 72%,transparent)}
 #экран-05 .заказ__итог{display:flex;align-items:center;justify-content:center;gap:.8rem;max-width:46rem;margin:clamp(3.2rem,7vw,6rem) auto 0;padding:1.2rem 1.5rem;border:var(--нить) solid;border-radius:var(--радиус-модуля);font-size:var(--кегль-лид);font-weight:700;text-align:center}
-#экран-05 .заказ__итог:before{content:'до 5';display:grid;place-items:center;min-width:4.6rem;min-height:3rem;padding:.25rem .7rem;border-radius:var(--радиус-малый);font-size:var(--кегль-текст);font-weight:800;text-transform:uppercase}
+#экран-05 .заказ__итог:before{content:'';display:none}
 #экран-05.светлый .заказ__итог{border-color:color-mix(in srgb,var(--цвет-акцент-яркий) 45%,var(--цвет-линия));background:color-mix(in srgb,var(--цвет-фон-карточки) 88%,transparent);color:var(--цвет-текст)}
 #экран-05.тёмный .заказ__итог{border-color:color-mix(in srgb,var(--цвет-тёплый) 48%,transparent);background:color-mix(in srgb,var(--цвет-тёмный-фон-3) 88%,transparent);color:var(--цвет-тёмный-текст)}
 #экран-05.светлый .заказ__итог:before{background:var(--цвет-акцент-яркий);color:var(--цвет-на-акценте)}
@@ -342,7 +343,6 @@ document.addEventListener('DOMContentLoaded', function () {
       <li class="заказ__шаг"><div class="шаг__номер">2</div><h3>Мы согласуем детали</h3><p>Для изготовления на заказ обсуждаем аромат, объём и другие нюансы.</p></li>
       <li class="заказ__шаг"><div class="шаг__номер">3</div><h3>Вы получаете заказ</h3><p>Доставка по России удобным способом или самовывоз в Санкт-Петербурге.</p></li>
     </ol>
-    <p class="заказ__итог">Изготовление на заказ занимает до 5 рабочих дней</p>
   </div>
 </section>
 
@@ -464,5 +464,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }, { threshold: 0 }).observe(кнопка);
 })();
 </script>
+<style>.первый-экран__доверие{display:none!important}</style>
+<script>document.addEventListener('DOMContentLoaded',function(){var заголовок=document.getElementById('отзывы-заголовок');if(заголовок)заголовок.textContent='Что покупатели говорят об «Акулине»';});</script>
 </body>
 </html>
