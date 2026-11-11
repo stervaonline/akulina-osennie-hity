@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <div class="акулина-мини" aria-label="Пять сезонных товаров"><button class="акулина-товар" type="button" data-название="Хозяйственное кокосовое мыло" data-цена="200 ₽" data-описание="Для хозяйственных задач. Актуальное наличие и подробности обсудим лично." aria-label="Подробнее: хозяйственное кокосовое мыло"><img width="1086" height="1448" src="img/01-mylo.webp" alt="Хозяйственное кокосовое мыло"></button><button class="акулина-товар" type="button" data-название="Свечи-катанки" data-цена="450 ₽ за пару" data-описание="Пара свечей-катанок. Актуальное наличие и подробности обсудим лично." aria-label="Подробнее: свечи-катанки"><img width="1086" height="1448" src="img/02-svechi.webp" alt="Свечи-катанки"></button><button class="акулина-товар" type="button" data-название="Шипучая соль для ванны" data-цена="300 ₽" data-описание="Баночка 300 г. Аромат и актуальное наличие обсудим лично." aria-label="Подробнее: шипучая соль для ванны"><img width="540" height="720" src="img/03-sol.webp" alt="Шипучая соль для ванны"></button><button class="акулина-товар" type="button" data-название="Пенка для умывания" data-цена="350 ₽" data-описание="Флакон 120 мл. Актуальное наличие и подробности обсудим лично." aria-label="Подробнее: пенка для умывания"><img width="1600" height="2133" src="img/04-penka.webp" alt="Пенка для умывания"></button><button class="акулина-товар" type="button" data-название="Противопростудный концентрат для ванны" data-цена="400 ₽" data-описание="Флакон 50 мл. Актуальное наличие и подробности обсудим лично." aria-label="Подробнее: противопростудный концентрат для ванны"><img width="1086" height="1448" src="img/05-kontsentrat.webp" alt="Противопростудный концентрат для ванны"></button></div>
       <p class="акулина-подсказка">Нажмите на фотографию, чтобы рассмотреть товар</p>
       <p class="акулина-под-фото">Другой аромат, объём или количество обсудим лично</p>
-      <div class="первый-экран__действие"><a class="кнопка кнопка--главная" href="https://vk.ru/akulina_lifestyle" target="_blank" rel="noopener noreferrer">Написать в сообщество</a></div>
+      <div class="первый-экран__действие"><a class="кнопка кнопка--главная" href="https://vk.ru/gim227249130?entrypoint=community_page" target="_blank" rel="noopener noreferrer">Написать в сообщество</a></div>
       <p class="мелкий первый-экран__доверие"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.2-7.5 9.5-4.3-1.3-7.5-4.9-7.5-9.5V6L12 3z"/>
 </svg> Изготовление на заказ — до 5 рабочих дней</p>
@@ -355,7 +355,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <h2 id="товар-заголовок"></h2>
       <p class="товар-окно__цена"></p>
       <p class="товар-окно__описание"></p>
-      <a class="кнопка кнопка--главная товар-окно__кнопка" href="https://vk.ru/akulina_lifestyle" target="_blank" rel="noopener noreferrer">Написать и заказать</a>
+      <a class="кнопка кнопка--главная товар-окно__кнопка" href="https://vk.ru/gim227249130?entrypoint=community_page" target="_blank" rel="noopener noreferrer">Написать и заказать</a>
     </div>
   </article>
 </div>
@@ -464,7 +464,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }, { threshold: 0 }).observe(кнопка);
 })();
 </script>
-<style>.первый-экран__доверие{display:none!important}</style>
-<script>document.addEventListener('DOMContentLoaded',function(){var заголовок=document.getElementById('отзывы-заголовок');if(заголовок)заголовок.textContent='Что покупатели говорят об «Акулине»';});</script>
+<style>.первый-экран__доверие{display:none!important}.акулина-контакт__ссылки{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}.акулина-контакт__ссылки .кнопка{margin-top:0}@media(max-width:700px){.акулина-контакт__ссылки{display:grid}.акулина-контакт__ссылки .кнопка{width:100%;text-align:center}}</style>
+<script>document.addEventListener('DOMContentLoaded',function(){var заголовок=document.getElementById('отзывы-заголовок');if(заголовок)заголовок.textContent='Что покупатели говорят об «Акулине»';var контакт=document.querySelector('.акулина-контакт__внутри');if(контакт){var кикер=контакт.querySelector('.акулина-хиты');var h2=контакт.querySelector('h2');if(кикер)кикер.textContent='Я в социальных сетях';if(h2)h2.textContent='Выберите удобный способ связаться';var старые=контакт.querySelectorAll('a.кнопка');старые.forEach(function(a){a.href='https://vk.ru/gim227249130?entrypoint=community_page';a.textContent='Написать в сообщество';});var ряд=document.createElement('div');ряд.className='акулина-контакт__ссылки';[['https://max.ru/channel_akulina','MAX — канал'],['https://vk.ru/akulina_lifestyle','ВКонтакте — сообщество']].forEach(function(данные){var a=document.createElement('a');a.className='кнопка';a.href=данные[0];a.target='_blank';a.rel='noopener noreferrer';a.textContent=данные[1];ряд.appendChild(a);});контакт.appendChild(ряд);}});</script>
 </body>
 </html>
