@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://stervaonline.github.io/akulina-osennie-hity/sitemap.xml
